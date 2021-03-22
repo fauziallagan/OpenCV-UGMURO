@@ -1,8 +1,12 @@
+# OpenCV Real Time Face Detection!
+
 # import numpy as np
 #module OpenCV
 import cv2 
 
 cam = cv2.VideoCapture(0)
+
+# Source File : https://github.com/opencv/opencv/tree/master/data/haarcascades
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
 
