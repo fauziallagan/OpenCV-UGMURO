@@ -1,15 +1,14 @@
 import numpy as np
 import cv2
 
-# cam = cv2.VideoCapture(0)
-
+# cam = cv2.VideoCapture(0) #real time Face detection
 # Source File : https://github.com/opencv/opencv/tree/master/data/haarcascades
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
 
-img = cv2.imread('obama.jpg') # file gambar
+img = cv2.imread('obama.jpg') # file gambar local
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+faces = face_cascade.detectMultiScale(gray, 2.3, 5)
 
 for (x,y,w,h) in faces:
     cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
@@ -23,5 +22,5 @@ for (x,y,w,h) in faces:
 cv2.imshow('frame',img)
 cv2.waitKey(0)    
 # cam.release()
-
+print(gray)
 cv2.destroyAllWindows()
